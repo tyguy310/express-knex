@@ -21,7 +21,11 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  Albums().insert({ name: req.body.name })
+  console.log(req.body);
+
+  Albums().insert({
+    name: req.body.name
+    })
   .then(() => {
     res.redirect('/albums');
   });
